@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>FAQ Bot for Freshmen</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/owl.carousel.css" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/airspace.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/ionicons.min.css" />
+<link rel="stylesheet" href="/css/animate.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+
+<!-- Js -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/min/waypoints.min.js"></script>
+<script src="/js/jquery.counterup.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!--
+/*
+ * Airspace
+ * Ported to Jekyll by Andrew Lee
+ * https://github.com/luminousrubyist/airspace-jekyll
+ * Designed and Developed by ThemeFisher
+ * https://themefisher.com/
+ *
+ */
+-->
+
+
+  </head>
+  <body>
+
+
+    <!-- Header Start -->
+<header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- header Nav Start -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+              WnCC
+              <!--<img src="/img/wncc.jpg" style ="height: 56px; width: 100px" alt="Logo"> -->
+            </a>
+          </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/soc">SoC</a></li>
+                <li><a href="/itsp">ITSP</a></li>
+                <li><a href="https://portals.wncc-iitb.org/internships/login/">Internship Portal</a></li>
+                <li><a href="https://wncc-iitb.org/wiki/index.php/The_Web_and_Coding_Club">Wiki</a></li>
+                <li><a href="/team">Team</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header><!-- header close -->
+
+
+
+    <div class="post">
+  <!-- Wrapper Start -->
+  <section id="intro" style="border: 1px dotted #ddd;">
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="block">
+            <h1>FAQ Bot for Freshmen</h1>
+            <div class="post-info-wrapper">
+            </div>
+            <hr />
+            <p><hr />
+<p>The task is to build a chatbot for answering FAQs aimed primarily at the newly joined students, faculty and staff at the Institute.</p>
+
+<!--break-->
+
+<p>A freshman joining the institute has a lot of information to search, assimilate and keep track of. How can I get my internet working? What is the procedure for registration? When will I get my ID card? Where can I get food late at night around the campus? These are just a few of the very common queries one might have apart from a ton of other tech and admin trivia.</p>
+
+<!--break-->
+
+<p>We all have experience with FAQ pages which are the primary source of information dissemination from an individual lab to the institute level. They are lengthy, bloated, and super boring. Although searchable, one has to search for exact words to find answers.</p>
+
+<!--break-->
+
+<p>Chatbots are artificial conversational agents which simulate human conversation. Imagine asking a virtual assistant the questions mentioned above in a Messenger chat-style interface and getting your answers instantly, anywhere on campus. A one-stop solution and no running around the admin offices or labs!</p>
+
+<!--break-->
+
+<p>I wrote a basic FAQbot over summer 2016 for prospective new joiners at the electrical department as a hobby project. It was hosted on the department website for over a semester and was mainly tested by my fellow lab members and used by a few students. Version 1 built on top of the chatterbot library and a barebones flask server. In spite of its limitations, it was a lot of fun to build and learn along the way. Recently with deep learning techniques promising much more customizable chatbots, version 2 I built used a simple neural network backend.</p>
+
+<!--break-->
+
+<p>With this existing codebase and data to build upon, there will be two major tasks as a part of this SoC.</p>
+
+<ol>
+  <li>Incorporating personalization and context preservation capabilities with recurrent nets for an enhanced user experience.</li>
+  <li>Developing a lightweight and friendly chat frontend. The front-end can be browser-based web chat or via telegram APIs.</li>
+</ol>
+
+<!--break-->
+
+<p>Existing Project Repo: <a href="https://github.com/saurabhkm/FAQBot-Keras">https://github.com/saurabhkm/FAQBot-Keras</a>
+The dataset on the repo is a stub to avoid spamming!</p>
+
+<!--break-->
+
+<h5 id="prerequisites">Prerequisites:</h5>
+
+<ul>
+  <li>No prior experience with chatbots required.</li>
+  <li>Coding experience with python is the only hard requirement.</li>
+  <li>Hands on with basic machine learning programs is a plus.</li>
+  <li>Knowledge of the fundamentals of deep learning and natural language processing is also a plus (can be picked up along the way).</li>
+  <li>For the frontend, prior basic web dev/Telegram APIs is not required, a student willing to pick it up along the way is cool!</li>
+</ul>
+
+<!--break-->
+
+<p>For students who have participated in Summer of Science(Machine Learning track) before, this would be a great hands-on project! As always, interest and enthu will take us much further!</p>
+
+<!--break-->
+
+<h5 id="proposal-expectations">Proposal expectations:</h5>
+<p>Write about your prior experience with things mentioned in the prerequisites and a list any prior machine learning projects completed. Do send across links to your project repos and demos, if any, along with the proposal. Although this is not mandatory but try to include a rough expected timeline for yourself.</p>
+</p>
+          </div>
+        </div><!-- .col-md-7 close -->
+      </div>
+    </div>
+  </section>
+</div>
+<p class="center-text" style="padding: 30px;">
+  <a href="/blog">Back to blog</a>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer Start -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer-manu">
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="/contact">Contact us</a></li>
+            <li><a href="#">How it works</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </body>
+</html>

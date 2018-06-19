@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Monte Carlo Path Tracing Renderer</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/owl.carousel.css" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/airspace.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/ionicons.min.css" />
+<link rel="stylesheet" href="/css/animate.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+
+<!-- Js -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/min/waypoints.min.js"></script>
+<script src="/js/jquery.counterup.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!--
+/*
+ * Airspace
+ * Ported to Jekyll by Andrew Lee
+ * https://github.com/luminousrubyist/airspace-jekyll
+ * Designed and Developed by ThemeFisher
+ * https://themefisher.com/
+ *
+ */
+-->
+
+
+  </head>
+  <body>
+
+
+    <!-- Header Start -->
+<header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- header Nav Start -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+              WnCC
+              <!--<img src="/img/wncc.jpg" style ="height: 56px; width: 100px" alt="Logo"> -->
+            </a>
+          </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/soc">SoC</a></li>
+                <li><a href="/itsp">ITSP</a></li>
+                <li><a href="https://portals.wncc-iitb.org/internships/login/">Internship Portal</a></li>
+                <li><a href="https://wncc-iitb.org/wiki/index.php/The_Web_and_Coding_Club">Wiki</a></li>
+                <li><a href="/team">Team</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header><!-- header close -->
+
+
+
+    <div class="post">
+  <!-- Wrapper Start -->
+  <section id="intro" style="border: 1px dotted #ddd;">
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="block">
+            <h1>Monte Carlo Path Tracing Renderer</h1>
+            <div class="post-info-wrapper">
+            </div>
+            <hr />
+            <p><hr />
+
+<p>This internship involves the implementation of a Monte Carlo Path Tracer.</p>
+
+<!--break-->
+
+<h3 id="monte-carlo-path-tracing-renderer">Monte Carlo Path Tracing Renderer</h3>
+<p>In this project, you will implement a Monte Carlo Path Tracer. A path tracer is a kind of renderer in computer graphics. A renderer is responsible for generating the image or the graphics that you see on your screen. Even this text that you are reading is displayed via a font renderer. Path tracers are often used for photorealistic rendering, which means generating an image indistinguishable from a photograph. At the end of the project, you can expect to have a code capable of producing such images.</p>
+
+<!--break-->
+
+<p>As a primer, you should read Andrew Glassner’s <a href="https://www.goodreads.com/book/show/1441550.An_Introduction_to_Ray_Tracing">Introduction to Ray Tracing</a></p>
+
+<!--break-->
+
+<h3 id="pre-requisites">Pre-requisites</h3>
+<ul>
+  <li>At least two years of experience with CPP, awareness of gcc and make</li>
+  <li>A basic course on DSA</li>
+</ul>
+
+<!--break-->
+
+<h3 id="tentative-project-timeline">Tentative Project Timeline</h3>
+
+<p>I expect about 100 hours of work spread over ten weeks.</p>
+
+<!--break-->
+
+<table>
+  <thead>
+    <tr>
+      <th>Week Number</th>
+      <th>Tasks to be Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Week 1</strong></td>
+      <td>Read the book</td>
+    </tr>
+    <tr>
+      <td><strong>Week 2</strong></td>
+      <td>Write an XML parser. This is the submodule that reads the scene.</td>
+    </tr>
+    <tr>
+      <td><strong>Week 3</strong></td>
+      <td>Write the skeleton of the graphics pipeline. This involves implementing coordinate transformations</td>
+    </tr>
+    <tr>
+      <td><strong>Week 4</strong></td>
+      <td>Implement the Ray and Object class. Most of the Path Tracing routine can be summarised as measuring intersection of instances of Ray class with instances of the Object class.</td>
+    </tr>
+    <tr>
+      <td><strong>Week 5</strong></td>
+      <td>Implement Direct Lighting and Whitted Ray Tracing</td>
+    </tr>
+    <tr>
+      <td><strong>Week 6</strong></td>
+      <td>Implement Recursive Rays to capture higher order light paths</td>
+    </tr>
+    <tr>
+      <td><strong>Week 7</strong></td>
+      <td>Debugging buffer &amp; Implement Jittering and Supersampling</td>
+    </tr>
+    <tr>
+      <td><strong>Week 8</strong></td>
+      <td>Monte Carlo enters. Learn Sampling. Implement Diffuse Sampling and Area lights. Effects like soft shadows and colour bleeding start to appear</td>
+    </tr>
+    <tr>
+      <td><strong>Week 9</strong></td>
+      <td>Debugging Buffer</td>
+    </tr>
+    <tr>
+      <td><strong>Week 10</strong></td>
+      <td>Documentation, Generating Scenes, Videos</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--break-->
+
+<h3 id="secondary-learning-goals">Secondary Learning Goals</h3>
+<p>Apart from learning about path tracers and rendering, you can expect to learn about the following:</p>
+<ul>
+  <li>Monte Carlo Sampling</li>
+  <li>Basics of ImageMagick</li>
+  <li>OpenMP Parallelization.</li>
+</ul>
+
+<!--break-->
+
+<h3 id="repositories">Repositories</h3>
+<p>The project will be done in groups of two. We will consider minor variations
+in the raytracers, Swati (<a href="https://github.com/wncc/swati-rt">swati-rt</a>) and Revati (<a href="https://github.com/wncc/revati-rt">revati-rt</a>)</p>
+</p>
+          </div>
+        </div><!-- .col-md-7 close -->
+      </div>
+    </div>
+  </section>
+</div>
+<p class="center-text" style="padding: 30px;">
+  <a href="/blog">Back to blog</a>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer Start -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer-manu">
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="/contact">Contact us</a></li>
+            <li><a href="#">How it works</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </body>
+</html>

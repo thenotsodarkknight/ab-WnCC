@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Capturing semantic structures in Neural Machine Translation</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/owl.carousel.css" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/airspace.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/ionicons.min.css" />
+<link rel="stylesheet" href="/css/animate.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+
+<!-- Js -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/min/waypoints.min.js"></script>
+<script src="/js/jquery.counterup.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!--
+/*
+ * Airspace
+ * Ported to Jekyll by Andrew Lee
+ * https://github.com/luminousrubyist/airspace-jekyll
+ * Designed and Developed by ThemeFisher
+ * https://themefisher.com/
+ *
+ */
+-->
+
+
+  </head>
+  <body>
+
+
+    <!-- Header Start -->
+<header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- header Nav Start -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+              WnCC
+              <!--<img src="/img/wncc.jpg" style ="height: 56px; width: 100px" alt="Logo"> -->
+            </a>
+          </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/soc">SoC</a></li>
+                <li><a href="/itsp">ITSP</a></li>
+                <li><a href="https://portals.wncc-iitb.org/internships/login/">Internship Portal</a></li>
+                <li><a href="https://wncc-iitb.org/wiki/index.php/The_Web_and_Coding_Club">Wiki</a></li>
+                <li><a href="/team">Team</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header><!-- header close -->
+
+
+
+    <div class="post">
+  <!-- Wrapper Start -->
+  <section id="intro" style="border: 1px dotted #ddd;">
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="block">
+            <h1>Capturing semantic structures in Neural Machine Translation</h1>
+            <div class="post-info-wrapper">
+            </div>
+            <hr />
+            <p><hr />
+<h4 id="this-project-is-aimed-towards-people-who-are-interested-in-ml-and-neuro-linguistic-programming-and-handles-neural-machine-translation-with-an-unusual-approach">This project is aimed towards people who are interested in ML and Neuro-Linguistic Programming; and handles Neural Machine Translation with an unusual approach</h4>
+<!--break-->
+
+<p>Neural Networks are being extensively used for machine translation. While tools like Google Translate might look so practically effective in translation, the accuracy (BLEU scores) of such models on test benchmarks is just in the range of 28-40%! From our initial experiments with such models, we can say that these networks essentially learn to output translations all of which carry the same semantic structure – a different way of referring to the same thing or paraphrasing. There has been some previous work in the domain of learning to align to fixed semantic structure or learning to handle paraphrasing during NMT. We have a simple approach in mind, which we want to try out.</p>
+
+<!--break-->
+
+<p>We stick to the standard Encoder-Decoder architecture for Neural Machine Translation(NMT). To give a brief overview, a recurrent neural network (Encoder) takes the input sequence and converts it to an intermediate hidden representation on which another recurrent neural network (Decoder) operates and produces the output sequence. The standard NMT architecture involves a single encoder and decoder mechanism. Here, essentially, we want to have multiple decoders, each of which can capture a different semantic structure of the sequence. Training these multiple decoders will involve not only maximising the likelihood for prediction for each but also producing diverse outputs among themselves. If successfully learned, this model can learn to produce translations which are different ways of saying the same thing.</p>
+
+<!--break-->
+
+<p>The motivation for this idea comes from an analogy to generative models like GANs. Often GANs suffer from mode collapse, that is they fail to capture different modes in the space of images, and rotate among different modes. Having a ‘n-way’ mixture (which essentially is implemented by multiple decoders), we can prevent such a problem from arising.</p>
+
+<!--break-->
+
+<h4 id="some-initial-relevant-papers">Some (initial) relevant papers:</h4>
+<ol>
+  <li>Adversarial Example Generation with Syntactically Controlled Paraphrase Networks <a href="https://arxiv.org/pdf/1804.06059.pdf">https://arxiv.org/pdf/1804.06059.pdf</a></li>
+  <li>Diverse Beam Search <a href="https://arxiv.org/abs/1610.02424">https://arxiv.org/abs/1610.02424</a></li>
+  <li>Breaking softmax bottleneck (might be interesting to see if their solution captures semantic structures too)  <a href="https://arxiv.org/abs/1711.03953">https://arxiv.org/abs/1711.03953</a></li>
+</ol>
+
+<!--break-->
+<h4 id="base-code-tensorflow-official-nmt-repository--httpsgithubcomtensorflownmt">Base Code: Tensorflow Official NMT repository  <a href="https://github.com/tensorflow/nmt">https://github.com/tensorflow/nmt</a></h4>
+<!--break-->
+
+<h4 id="why-should-one-choose-this-project">Why should one choose this project?</h4>
+<p>This project is more on the lines of exploration so active participation is needed from your side not only for the coding part but also for formulating the problem and thus you will have the freedom to test and implement your own ideas as well. This will be an excellent way to venture into the field of Machine Learning (Deep Learning in specific) and can act as a solid starting point for you to pursue more projects/research in DL. This project will also involve active reading of research papers and hence can be a very hands on research experience for you.
+<!--break--></p>
+
+<h4 id="who-should-choose-this-project">Who should choose this project?</h4>
+<p>A prerequisite for choosing this project is having a basic knowledge of Neural Networks and concepts of Machine Learning (Though this can also be learnt while doing the project if student is motivated and interested to learn). The student should be comfortable coding in Python and should have ability to learn to program in a new environment (Tensorflow). Any prior experience with Keras, Pytorch or Tensorflow is appreciated. 
+<!--break--></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Work</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Week 1 :</td>
+      <td>Reading Seq2Seq NMT paper and getting familiarized with the code by trying out some simple variations and trying to replicate benchmarks on some datasets</td>
+    </tr>
+    <tr>
+      <td>Week 2 onwards:</td>
+      <td>Implementing a multi-decoder module in the NMT code and modifying the loss for training by incorporating cross entropy on the predicted sequence and divergence between different decoder models</td>
+    </tr>
+    <tr>
+      <td>.</td>
+      <td>Testing initially on synthetic datasets for proof of concept and use this to tweak the model architecture, loss, etc to improve the prediction scores. If there are signs of the model being able to capture wider semantic structures, we can test the model on bigger datasets.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--break-->
+<h4 id="miscellaneous">Miscellaneous</h4>
+<p>This project might be resource intensive. Google Cloud or other Cloud platforms might be required to test full blown models, once the model seems to work on toy data.</p>
+
+<!--break-->
+<p>If the idea works out and results are encouraging, this might lead to an academic research paper at an NLP/ML conference.</p>
+</p>
+          </div>
+        </div><!-- .col-md-7 close -->
+      </div>
+    </div>
+  </section>
+</div>
+<p class="center-text" style="padding: 30px;">
+  <a href="/blog">Back to blog</a>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer Start -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer-manu">
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="/contact">Contact us</a></li>
+            <li><a href="#">How it works</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </body>
+</html>
