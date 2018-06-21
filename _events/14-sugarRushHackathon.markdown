@@ -2,6 +2,7 @@
 layout: EventDisplay
 image: /images/sugar-rush-hackathon-cover.jpg
 title: Sugar Rush Hackathon 2016
+sidebar: right
 year: 2016
 date: "March 12 | 2016"
 weight: 10

@@ -1,6 +1,7 @@
 ---
 layout: EventDisplay
 image: /images/htmlcss-eventCover.jpg
+sidebar: right
 title: Scratch Day
 year: 2014
 date: "Sept 20 | 2014"

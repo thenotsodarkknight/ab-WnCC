@@ -1,5 +1,6 @@
 ---
 layout: EventDisplay
+sidebar: right
 image: /images/ciphers-eventCover.jpg
 title: Ciphers
 year: 2016

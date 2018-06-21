@@ -3,6 +3,7 @@ layout: EventDisplay
 image: /images/GIT1012017-eventcover.jpg
 title: GIT 101 2017
 year: 2017
+sidebar: right
 date: "Sep 2| 2017"
 weight: 20
 slides:

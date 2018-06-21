@@ -1,5 +1,6 @@
 ---
 layout: EventDisplay
+sidebar: right
 image: /images/yahoohacku-eventCover.jpg
 title: Yahoo! Hack U
 year: 2017

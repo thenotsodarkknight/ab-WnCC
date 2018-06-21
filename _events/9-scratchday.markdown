@@ -1,5 +1,6 @@
 ---
 layout: EventDisplay
+sidebar: right
 image: /images/scratchday-eventCover.jpg
 title: Scratch Day
 year: 2015

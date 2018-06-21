@@ -2,6 +2,7 @@
 layout: EventDisplay
 image: /images/scratchday2017-eventCover.jpg
 title: Scratch Day 2017
+sidebar: right
 year: 2017
 date: "Aug 5| 2017"
 weight: 20

@@ -1,6 +1,7 @@
 ---
 layout: EventDisplay
 image: /images/gio14-cover.png
+sidebar: right
 title: Google I/O Extended 2014
 year: 2014
 date: "June 25 | 2014"

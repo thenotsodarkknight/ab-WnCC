@@ -1,5 +1,6 @@
 ---
 layout: EventDisplay
+sidebar: right
 image: /images/rattlesnake-eventCover.jpg
 title: Rattlesnake
 year: 2017

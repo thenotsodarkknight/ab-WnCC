@@ -2,6 +2,7 @@
 layout: EventDisplay
 image: /images/hackWeekender-cover.jpg
 title: hack.Weekender()
+sidebar: right
 year: 2016
 date: "August 5 | 2016"
 weight: 10

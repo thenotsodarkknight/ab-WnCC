@@ -1,6 +1,7 @@
 ---
 layout: EventDisplay
 image: /images/moztalk-eventCover.jpg
+sidebar: right
 title: Moz Talk
 year: 2013
 date: "June 2 | 2013"

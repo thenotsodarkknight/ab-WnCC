@@ -1,5 +1,6 @@
 ---
 layout: EventDisplay
+sidebar: right
 image: /images/webDevHackathon-eventCover.jpg
 title: Web Development Hackathon
 year: 2016

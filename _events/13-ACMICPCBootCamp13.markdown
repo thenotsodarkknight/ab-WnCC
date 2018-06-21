@@ -2,6 +2,7 @@
 layout: EventDisplay
 image: /images/acm-icpc-cover.jpg
 title: ACM ICPC Bootcamp 2013
+sidebar: right
 year: 2013
 date: "September 20 | 2013"
 weight: 10

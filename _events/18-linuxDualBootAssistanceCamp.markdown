@@ -2,6 +2,7 @@
 layout: EventDisplay
 image: /images/dual-boot-assistance-camp-cover.jpg
 title: Linux Dual Boot Assistance Camp
+sidebar: right
 year: 2016
 date: "May 1 | 2016"
 weight: 10

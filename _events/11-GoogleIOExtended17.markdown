@@ -1,6 +1,7 @@
 ---
 layout: EventDisplay
 image: /images/gio17-eventCover.jpg
+sidebar: right
 title: Google I/O Extended 2017
 year: 2017
 date: "May 18 | 2017"

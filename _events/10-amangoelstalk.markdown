@@ -1,6 +1,7 @@
 ---
 layout: EventDisplay
 image: /images/agt-eventCover.JPG
+sidebar: right
 title: Build a Career in Tech Without a CS Major
 year: 2017
 date: "Apr 9 | 2017"

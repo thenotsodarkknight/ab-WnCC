@@ -2,6 +2,7 @@
 layout: EventDisplay
 image: /images/coding-gc-14-cover.jpg
 title: Coding GC 2014
+sidebar: right
 year: 2014
 date: "August 30 | 2014"
 weight: 10

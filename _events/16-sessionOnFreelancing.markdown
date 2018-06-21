@@ -3,6 +3,7 @@ layout: EventDisplay
 image: /images/freelancing-cover.jpg
 title: Session On Freelancing
 year: 2016
+sidebar: right
 date: "September 17 | 2016"
 weight: 10
 

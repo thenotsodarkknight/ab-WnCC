@@ -1,5 +1,6 @@
 ---
 layout: EventDisplay
+sidebar: right
 image: /images/androidconclave-eventCover.jpg
 title: Android Wear Conclave
 year: 2014

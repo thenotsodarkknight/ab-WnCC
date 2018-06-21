@@ -1,5 +1,6 @@
 ---
 layout: EventDisplay
+sidebar: right
 image: /images/microsoftcfd-eventCover.jpg
 title: Microsoft Code.Fun.Do
 year: 2016
