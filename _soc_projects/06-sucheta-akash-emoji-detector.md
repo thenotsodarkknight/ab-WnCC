@@ -1,5 +1,6 @@
 ---
 layout: soc-project
+sidebar: right
 image: /images/emoji-detector.png
 title: Emoji Predictor
 mentor:

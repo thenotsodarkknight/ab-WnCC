@@ -1,5 +1,6 @@
 ---
 layout: soc-project
+sidebar: right
 image: /images/blind-source.jpg
 title: Blind Source Separation
 mentor: "Riddhish Bhalodia"

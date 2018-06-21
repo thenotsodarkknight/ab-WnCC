@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/texter.png
+sidebar: right
 title: Texter
 mentor: "Sarthak Khandelwal"
 category:

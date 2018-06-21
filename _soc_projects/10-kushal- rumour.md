@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/rumour.jpeg
+sidebar: right
 title: Rumour
 mentor: 
 - Kushal Babel

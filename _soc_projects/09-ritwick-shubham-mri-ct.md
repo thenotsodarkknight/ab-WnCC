@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/mri-ct.jpeg
+sidebar: right
 title: Automated Fiducial Localisation from MRI/CT Images 
 mentor: 
 - Ritwick Chaudhry

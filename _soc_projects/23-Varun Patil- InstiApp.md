@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/iitbapp.png
+sidebar: right
 title: InstiApp
 mentor:
 - Varun Patil

@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/fosseewebsite.jpg
+sidebar: right
 title: Front end development for FOSSEE websites
 mentor:
 - Priyanka

@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/planner.png
+sidebar: right
 title: Planner
 mentor: "Sarthak Khandelwal"
 category:

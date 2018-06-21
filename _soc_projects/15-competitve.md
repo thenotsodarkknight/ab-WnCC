@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/competitive-programming.jpg
+sidebar: right
 title: Competitive Coding
 mentor: Ishan Tarunesh
 category: "Competitive Coding"

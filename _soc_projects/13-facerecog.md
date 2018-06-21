@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/facerecog.jpg
+sidebar: right
 title: Face Recognition Systems
 mentor: 
 - Naman Jain 

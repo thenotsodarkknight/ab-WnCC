@@ -2,6 +2,7 @@
 layout: soc-project
 image: /images/3d-object-reconstruction.jpg
 title: 3D Object Reconstruction from Single Image
+sidebar: right
 mentor: "Arka Sadhu"
 category: "Image Processing, Machine Learning and 3D Vision;"
 application_procedure: "proposal"

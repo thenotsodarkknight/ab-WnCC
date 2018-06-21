@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/types-of-western-music.png
+sidebar: right
 title: Can Machines Identify Genres?
 mentor: Arunabh Ghosh
 category: "Machine Learning"

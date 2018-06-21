@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/poisson.png
+sidebar: right
 title: Poisson Solver with Image Editing
 mentor: "Riddhish Bhalodia"
 category: Scientific Computation

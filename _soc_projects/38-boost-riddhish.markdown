@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/machinelearning.jpg
+sidebar: right
 title: Adaboost
 mentor: "Riddhish Bhalodia"
 category: Scientific Computing

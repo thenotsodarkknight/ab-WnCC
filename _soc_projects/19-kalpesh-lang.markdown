@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/kalpesh-language.GIF
+sidebar: right
 title: Joint Modelling of Source Code and Natural Language
 mentor: "Kalpesh Krishna"
 category: "Development & Machine Learning"

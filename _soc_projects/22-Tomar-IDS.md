@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/thecampushub.jpg
+sidebar: right
 title: Institute Delivery System
 mentor: "Abhijit Tomar"
 category:

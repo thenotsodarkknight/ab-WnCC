@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/capturetheswag.jpg
+sidebar: right
 title: Capture The Swag
 mentor: "Akash Trehan"
 category: 

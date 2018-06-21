@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/faq-bot.jpg
+sidebar: right
 title: FAQ Bot for Freshmen
 mentor: Saurabh Kumar
 category: "Web Development, Machine Learning, NLP"

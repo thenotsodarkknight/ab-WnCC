@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/cheeku-montecarlo.gif
+sidebar: right
 title: Monte Carlo Path Tracing Renderer
 mentor: "Kumar Ayush"
 category: "Computer Graphics"

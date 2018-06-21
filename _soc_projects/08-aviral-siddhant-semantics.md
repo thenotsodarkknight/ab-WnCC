@@ -1,6 +1,7 @@
 ---
 layout: soc-project
 image: /images/semantics.png
+sidebar: right
 title: Capturing semantic structures in Neural Machine Translation
 mentor: 
 - Aviral Kumar
