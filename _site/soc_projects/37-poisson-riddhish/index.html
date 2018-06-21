@@ -1,0 +1,729 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Poisson Solver with Image Editing</title>
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/styles_feeling_responsive.css">
+
+  
+
+	<script src="http://localhost:4000/assets/js/modernizr.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+				families: [ 'Lato:400,700,400italic:latin', 'Volkhov::latin' ]
+			}
+		});
+	</script>
+
+	<noscript>
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+	</noscript>
+
+
+	<!-- Search Engine Optimization -->
+	<meta name="description" content="This notebook will be written using python, also employing numpy and OpenCV, we will initially implement Poisson solver for the discrete case which is immensely useful for many application then we will proceed on the application part which will be from this paper
+
+
+
+Week 0
+
+  Read the concerned paper and discuss about implementation.
+  Familiarize with simple optimization problems and how they are treated in the discrete domain.
+  Familiarize with Image handling in Python (OpenCV or PIL)
+
+
+Week 1
+
+  Design discretized algorithm for Laplace solver, with no Gradient field.
+  Work out a method for obtaining a mask - manually/on click.
+  Get good images to work upon and implement the mask.
+  Implement the Laplacian Solver on an image with random regions highlihgted. Worked Fine.
+  Temporary usage of gimp for creating mask, at the same time as naive cloning.
+  First real implementation of the Poisson Solver, complete with guidance field and real mask. (Geometric implementation)
+
+
+Week 2
+
+  Vectorize the search step of algorithm: Speed goes 3x.
+  Attempt to approach the problem by the Algebraic Method, which can accomplish the task in under 5 seconds, employing sparse matrices.
+  Futile efforts. Implementation on python might not work due to underlying design of sparse matrices (easily done on MATLAB).
+  Start off with the notebook by explaining the math and the implementation of the algorithm in the block-wise manner.
+
+
+The notebook has been completed and this project has been completed in just over two weeks. Follow this readme to run the notebook on your system, or check out the rendered notebook on the official iPython Wiki.">
+	<meta name="google-site-verification" content="Vk0IOJ2jwG_qEoG7fuEXYqv0m2rLa8P778Fi_GrsgEQ">
+	<meta name="msvalidate.01" content="0FB4C028ABCF07C908C54386ABD2D97F" >
+	
+	<link rel="author" href="https://plus.google.com/u/0/118311555303973066167">
+	
+	
+	<link rel="canonical" href="http://localhost:4000/soc_projects/37-poisson-riddhish/">
+
+
+	<!-- Facebook Open Graph -->
+	<meta property="og:title" content="Poisson Solver with Image Editing">
+	<meta property="og:description" content="This notebook will be written using python, also employing numpy and OpenCV, we will initially implement Poisson solver for the discrete case which is immensely useful for many application then we will proceed on the application part which will be from this paper
+
+
+
+Week 0
+
+  Read the concerned paper and discuss about implementation.
+  Familiarize with simple optimization problems and how they are treated in the discrete domain.
+  Familiarize with Image handling in Python (OpenCV or PIL)
+
+
+Week 1
+
+  Design discretized algorithm for Laplace solver, with no Gradient field.
+  Work out a method for obtaining a mask - manually/on click.
+  Get good images to work upon and implement the mask.
+  Implement the Laplacian Solver on an image with random regions highlihgted. Worked Fine.
+  Temporary usage of gimp for creating mask, at the same time as naive cloning.
+  First real implementation of the Poisson Solver, complete with guidance field and real mask. (Geometric implementation)
+
+
+Week 2
+
+  Vectorize the search step of algorithm: Speed goes 3x.
+  Attempt to approach the problem by the Algebraic Method, which can accomplish the task in under 5 seconds, employing sparse matrices.
+  Futile efforts. Implementation on python might not work due to underlying design of sparse matrices (easily done on MATLAB).
+  Start off with the notebook by explaining the math and the implementation of the algorithm in the block-wise manner.
+
+
+The notebook has been completed and this project has been completed in just over two weeks. Follow this readme to run the notebook on your system, or check out the rendered notebook on the official iPython Wiki.">
+	<meta property="og:url" content="http://localhost:4000/soc_projects/37-poisson-riddhish/">
+	<meta property="og:locale" content="en_EN">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="WnCC">
+	
+	<meta property="article:author" content="https://www.facebook.com/thenotsodarkknight">
+
+
+	
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="awairforitbeen">
+	<meta name="twitter:creator" content="awairforitbeen">
+	<meta name="twitter:title" content="Poisson Solver with Image Editing">
+	<meta name="twitter:description" content="This notebook will be written using python, also employing numpy and OpenCV, we will initially implement Poisson solver for the discrete case which is immensely useful for many application then we will proceed on the application part which will be from this paper
+
+
+
+Week 0
+
+  Read the concerned paper and discuss about implementation.
+  Familiarize with simple optimization problems and how they are treated in the discrete domain.
+  Familiarize with Image handling in Python (OpenCV or PIL)
+
+
+Week 1
+
+  Design discretized algorithm for Laplace solver, with no Gradient field.
+  Work out a method for obtaining a mask - manually/on click.
+  Get good images to work upon and implement the mask.
+  Implement the Laplacian Solver on an image with random regions highlihgted. Worked Fine.
+  Temporary usage of gimp for creating mask, at the same time as naive cloning.
+  First real implementation of the Poisson Solver, complete with guidance field and real mask. (Geometric implementation)
+
+
+Week 2
+
+  Vectorize the search step of algorithm: Speed goes 3x.
+  Attempt to approach the problem by the Algebraic Method, which can accomplish the task in under 5 seconds, employing sparse matrices.
+  Futile efforts. Implementation on python might not work due to underlying design of sparse matrices (easily done on MATLAB).
+  Start off with the notebook by explaining the math and the implementation of the algorithm in the block-wise manner.
+
+
+The notebook has been completed and this project has been completed in just over two weeks. Follow this readme to run the notebook on your system, or check out the rendered notebook on the official iPython Wiki.">
+	
+	
+
+	<link type="text/plain" rel="author" href="http://localhost:4000/humans.txt">
+
+	
+
+	
+
+	<link rel="icon" sizes="32x32" href="http://localhost:4000/assets/img/favicon-32x32.png">
+
+	<link rel="icon" sizes="192x192" href="http://localhost:4000/assets/img/touch-icon-192x192.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="http://localhost:4000/assets/img/apple-touch-icon-180x180-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://localhost:4000/assets/img/apple-touch-icon-152x152-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/assets/img/apple-touch-icon-144x144-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://localhost:4000/assets/img/apple-touch-icon-120x120-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/assets/img/apple-touch-icon-114x114-precomposed.png">
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://localhost:4000/assets/img/apple-touch-icon-76x76-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/assets/img/apple-touch-icon-72x72-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/assets/img/apple-touch-icon-precomposed.png">	
+
+	<meta name="msapplication-TileImage" content="http://localhost:4000/assets/img/msapplication_tileimage.png">
+
+	<meta name="msapplication-TileColor" content="#fabb00">
+
+
+	
+
+</head>
+<body id="top-of-page" class="">
+	
+	
+<div id="navigation" class="sticky">
+  <nav class="top-bar" role="navigation" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+      <h1 class="show-for-small-only"><a href="http://localhost:4000" class="icon-tree"> WnCC</a></h1>
+    </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Nav</span></a></li>
+    </ul>
+    <section class="top-bar-section">
+
+      <ul class="right">
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+            
+            
+              <li class="divider"></li>
+              <li><a  href="http://localhost:4000/search/">Search</a></li>
+
+            
+            
+          
+        
+
+              
+
+          
+          
+            
+            
+              <li class="divider"></li>
+              <li><a  href="http://localhost:4000/contact/">Contact</a></li>
+
+            
+            
+          
+        
+        
+      </ul>
+
+      <ul class="left">
+        
+
+              
+
+          
+          
+
+            
+            
+              <li><a  href="http://localhost:4000/">WnCC</a></li>
+              <li class="divider"></li>
+
+            
+            
+          
+        
+
+              
+
+          
+          
+
+            
+            
+              <li><a  href="https://portals.wncc-iitb.org/internships/login/" target="_blank">Internship Portal</a></li>
+              <li class="divider"></li>
+
+            
+            
+          
+        
+
+              
+
+          
+          
+
+            
+            
+              <li><a  href="https://wncc-iitb.org/wiki/index.php/The_Web_and_Coding_Club" target="_blank">Wiki</a></li>
+              <li class="divider"></li>
+
+            
+            
+          
+        
+
+              
+
+          
+          
+
+            
+            
+
+              <li class="has-dropdown">
+                <a  href="http://localhost:4000/events/">Events</a>
+
+                  <ul class="dropdown">
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000/events/18/">2018</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000/events/17/">2017</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000/events/16/">2016</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000/events/15/">2015</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000/events/14/">2014</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000/events/13/">2013</a></li>
+                    
+                  </ul>
+
+              </li>
+              <li class="divider"></li>
+            
+          
+        
+
+              
+
+          
+          
+
+            
+            
+
+              <li class="has-dropdown">
+                <a  href="http://localhost:4000/soc/">Seasons of Code</a>
+
+                  <ul class="dropdown">
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000/soc/18/">2018</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000/soc/17/">2017</a></li>
+                    
+                  </ul>
+
+              </li>
+              <li class="divider"></li>
+            
+          
+        
+
+              
+
+          
+          
+
+            
+            
+
+              <li class="has-dropdown">
+                <a  href="http://localhost:4000/team/">The Team</a>
+
+                  <ul class="dropdown">
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000/team/18-19/">2018-19</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000/team/17-18/">2017-18</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000/team/16-17/">2016-17</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000/team/15-16/">2015-16</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000/team/14-15/">2014-15</a></li>
+                    
+
+                      
+
+                      <li><a  href="http://localhost:4000/team/13-14/">2013-14</a></li>
+                    
+                  </ul>
+
+              </li>
+              <li class="divider"></li>
+            
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+        
+      </ul>
+    </section>
+  </nav>
+</div><!-- /#navigation -->
+
+	
+
+	
+
+<div id="masthead-no-image-header">
+	<div class="row">
+		<div class="small-12 columns">
+			<a id="logo" href="http://localhost:4000/" title="WnCC – The Web and Coding Club">
+				<img src="http://localhost:4000/assets/img/wncc.png" alt="WnCC – The Web and Coding Club">
+			</a>
+		</div><!-- /.small-12.columns -->
+	</div><!-- /.row -->
+</div><!-- /#masthead -->
+
+
+
+
+
+
+
+
+	<!-- Main -->
+<div class="row t30">
+    <div class="medium-8 columns medium-offset-2 end">
+        <article itemscope itemtype="http://schema.org/Article">
+            <header>
+                
+                <figure>
+                    <img src="../..//images/poisson.png" width="970" alt="Poisson Solver with Image Editing" itemprop="image">
+
+                    
+                </figure>
+                
+
+                <div itemprop="name">
+                    <p class="subheadline">Scientific Computation</p>
+                    <h1>Poisson Solver with Image Editing</h1>
+                    <p class="subheadline">Riddhish Bhalodia<br>
+                    
+                    </p>
+                </div>
+            </header>
+
+
+            
+
+            <div itemprop="articleSection">
+            <p>This notebook will be written using python, also employing numpy and OpenCV, we will initially implement Poisson solver for the discrete case which is immensely useful for many application then we will proceed on the application part which will be from <a href="https://www.cs.jhu.edu/~misha/Fall07/Papers/Perez03.pdf">this paper</a></p>
+
+<!--break-->
+
+<h3 id="week-0">Week 0</h3>
+<ul>
+  <li>Read the concerned paper and discuss about implementation.</li>
+  <li>Familiarize with simple optimization problems and how they are treated in the discrete domain.</li>
+  <li>Familiarize with Image handling in Python (OpenCV or PIL)</li>
+</ul>
+
+<h3 id="week-1">Week 1</h3>
+<ul>
+  <li>Design discretized algorithm for Laplace solver, with no Gradient field.</li>
+  <li>Work out a method for obtaining a mask - manually/on click.</li>
+  <li>Get good images to work upon and implement the mask.</li>
+  <li>Implement the Laplacian Solver on an image with random regions highlihgted. Worked Fine.</li>
+  <li>Temporary usage of <code class="highlighter-rouge">gimp</code> for creating mask, at the same time as naive cloning.</li>
+  <li>First real implementation of the Poisson Solver, complete with guidance field and real mask. (Geometric implementation)</li>
+</ul>
+
+<h3 id="week-2">Week 2</h3>
+<ul>
+  <li>Vectorize the search step of algorithm: Speed goes 3x.</li>
+  <li>Attempt to approach the problem by the <em>Algebraic Method</em>, which can accomplish the task in under 5 seconds, employing sparse matrices.</li>
+  <li>Futile efforts. Implementation on python might not work due to underlying design of sparse matrices (easily done on MATLAB).</li>
+  <li>Start off with the notebook by explaining the math and the implementation of the algorithm in the block-wise manner.</li>
+</ul>
+
+<p>The notebook has been completed and this project has been completed in just over two weeks. Follow this <a href="https://github.com/riddhishb/ipython-notebooks/blob/master/Poisson%20Editing/README.md">readme</a> to run the notebook on your system, or check out the rendered notebook on the official <a href="https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks#signal-and-sound-processing">iPython Wiki</a>.</p>
+
+            </div>
+
+            <!--<div itemprop="articleSection">
+                <p class="subheadline">
+                    Selected Mentees: Dhruv Ilesh Shah <br>
+                    How to Contact the Mentor: 
+                </p>   
+            </div>-->
+
+            
+
+            
+            <br>
+            <br>
+            
+        </article>
+    </div><!-- /.medium-8.columns -->
+
+
+    
+
+
+    
+
+
+</div><!-- /.row -->
+
+
+	
+	    <div id="up-to-top" class="row">
+      <div class="small-12 columns" style="text-align: right;">
+        <a class="iconfont" href="#top-of-page">&#xf108;</a>
+      </div><!-- /.small-12.columns -->
+    </div><!-- /.row -->
+
+
+    <footer id="footer-content" class="bg-grau">
+      <div id="footer">
+        <div class="row">
+          <div class="medium-6 large-5 columns">
+            <h5 class="shadow-black">About This Site</h5>
+
+            <p class="shadow-black">
+              We're WnCC, the Web and Coding Club of IIT Bombay. We code and help people code. Being the chief coding organisation of one of the most sought after technical institutions in the country, we have some of the very best programmers working with us. This page enlists our ongoing activities. It is maintained by the coding community at IIT-B. We're wncc-iitb on most services. Also, we love XKCD.
+              <a href="http://localhost:4000/info/">More ›</a>
+            </p>
+          </div><!-- /.large-6.columns -->
+
+
+          <div class="small-6 medium-3 large-3 large-offset-1 columns">
+            
+              
+                <h5 class="shadow-black">Services</h5>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+
+              <ul class="no-bullet shadow-black">
+              
+                
+                  <li >
+                    <a href="http://localhost:4000"  title=""></a>
+                  </li>
+              
+                
+                  <li >
+                    <a href="http://localhost:4000/contact/"  title="Contact">Contact</a>
+                  </li>
+              
+                
+                  <li >
+                    <a href="http://localhost:4000/feed.xml"  title="Subscribe to RSS Feed">RSS</a>
+                  </li>
+              
+                
+                  <li >
+                    <a href="http://localhost:4000/atom.xml"  title="Subscribe to Atom Feed">Atom</a>
+                  </li>
+              
+                
+                  <li >
+                    <a href="http://localhost:4000/sitemap.xml"  title="Sitemap for Google Webmaster Tools">sitemap.xml</a>
+                  </li>
+              
+              </ul>
+          </div><!-- /.large-4.columns -->
+
+
+          <div class="small-6 medium-3 large-3 columns">
+            
+              
+                <h5 class="shadow-black">Assets</h5>
+              
+            
+              
+            
+              
+            
+              
+            
+
+            <ul class="no-bullet shadow-black">
+            
+              
+                <li >
+                  <a href="http://localhost:4000"  title=""></a>
+                </li>
+            
+              
+                <li class="network-entypo" >
+                  <a href="https://wncc-iitb.org/wiki/index.php/The_Web_and_Coding_Club" target="_blank"  title="Wiki">Wiki</a>
+                </li>
+            
+              
+                <li class="services-newsletter" >
+                  <a href="https://portals.wncc-iitb.org/internships/login/" target="_blank"  title="Internship Portal">Internship Portal</a>
+                </li>
+            
+              
+                <li class="rss-link" >
+                  <a href="https://groups.google.com/forum/#!forum/wncc_iitb" target="_blank"  title="WnCC Google Group">WnCC Google Group</a>
+                </li>
+            
+            </ul>
+          </div><!-- /.large-3.columns -->
+        </div><!-- /.row -->
+
+      </div><!-- /#footer -->
+
+
+      <div id="subfooter">
+        <nav class="row">
+          <section id="subfooter-left" class="small-12 medium-6 columns credits">
+            <p>Created with &hearts; by <a href="http://www.facebook.com/thenotsodarkknight">Abeen Bhattacharya</a></p>
+          </section>
+
+          <section id="subfooter-right" class="small-12 medium-6 columns">
+            <ul class="inline-list social-icons">
+            
+              <li><a href="http://github.com/thenotsodarkknight" target="_blank" class="icon-github" title="Code und mehr..."></a></li>
+            
+              <li><a href="http://www.youtube.com/wncc" target="_blank" class="icon-youtube" title="Videos, Video-Anleitungen und Filme von Phlow auf YouTube"></a></li>
+            
+              <li><a href="http://twitter.com/awaitforitbeen" target="_blank" class="icon-twitter" title="Immer das Neuste von Phlow gibt es auf Twitter"></a></li>
+            
+              <li><a href="http://www.mixcloud.com/phlow/" target="_blank" class="icon-cloud" title="Mixe, was sonst?"></a></li>
+            
+              <li><a href="https://plus.google.com/u/0/+Phlow" target="_blank" class="icon-googleplus" title="YouTube Google+"></a></li>
+            
+              <li><a href="http://www.facebook.com/thenotsodarkknight" target="_blank" class="icon-facebook" title="facebook"></a></li>
+            
+              <li><a href="http://instagram.com/lazybaccha" target="_blank" class="icon-instagram" title=""></a></li>
+            
+            </ul>
+          </section>
+        </nav>
+      </div><!-- /#subfooter -->
+    </footer>
+
+	
+
+	
+
+
+<script src="http://localhost:4000/assets/js/javascript.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+

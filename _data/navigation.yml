@@ -1,0 +1,68 @@
+- title: WnCC
+  url: "/"
+  side: left
+
+- title: Internship Portal
+  url: "https://portals.wncc-iitb.org/internships/login/"
+  side: left
+
+- title: Wiki
+  url: "https://wncc-iitb.org/wiki/index.php/The_Web_and_Coding_Club"
+  side: left
+
+- title: "Events"
+  url: "/events/"
+  side: left
+  dropdown:
+  - title: "2018"
+    url: "/events/18/"
+  - title: "2017"
+    url: "/events/17/"
+  - title: "2016"
+    url: "/events/16/"
+  - title: "2015"
+    url: "/events/15/"
+  - title: "2014"
+    url: "/events/14/"
+  - title: "2013"
+    url: "/events/13/"
+  
+
+- title: Seasons of Code
+  url: "/soc/"
+  side: left
+  dropdown:
+  - title: "2018"
+    url: "/soc/18/"
+  - title: "2017"
+    url: "/soc/17/"
+    
+
+
+
+- title: The Team
+  url: "/team/"
+  side: left
+  dropdown:
+  - title: "2018-19"
+    url: "/team/18-19/"
+  - title: "2017-18"
+    url: "/team/17-18/"
+  - title: "2016-17"
+    url: "/team/16-17/"
+  - title: "2015-16"
+    url: "/team/15-16/"
+  - title: "2014-15"
+    url: "/team/14-15/"
+  - title: "2013-14"
+    url: "/team/13-14/"
+
+
+
+- title: "Search"
+  url: "/search/"
+  side: right
+
+- title: "Contact"
+  url: "/contact/"
+  side: right

@@ -1,0 +1,17 @@
+- menu_name: "Assets"
+
+- name: "Wiki"
+  url: "https://wncc-iitb.org/wiki/index.php/The_Web_and_Coding_Club"
+  class: "network-entypo"
+  title: "Wiki"
+
+- name: "Internship Portal"
+  url: "https://portals.wncc-iitb.org/internships/login/"
+  class: "services-newsletter"
+  title: "Internship Portal"
+
+- name: "WnCC Google Group"
+  url: "https://groups.google.com/forum/#!forum/wncc_iitb"
+  class: "rss-link"
+  title: "WnCC Google Group"
+
