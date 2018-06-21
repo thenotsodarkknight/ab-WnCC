@@ -43,18 +43,18 @@
   url: "/team/"
   side: left
   dropdown:
-  - title: "2018-19"
-    url: "/team/18-19/"
-  - title: "2017-18"
-    url: "/team/17-18/"
-  - title: "2016-17"
-    url: "/team/16-17/"
-  - title: "2015-16"
-    url: "/team/15-16/"
-  - title: "2014-15"
-    url: "/team/14-15/"
-  - title: "2013-14"
-    url: "/team/13-14/"
+  - title: "2018"
+    url: "/team/18/"
+  - title: "2017"
+    url: "/team/17/"
+  - title: "2016"
+    url: "/team/16/"
+  - title: "2015"
+    url: "/team/15/"
+  - title: "2014"
+    url: "/team/14/"
+  - title: "2013"
+    url: "/team/13/"
 
 
 
